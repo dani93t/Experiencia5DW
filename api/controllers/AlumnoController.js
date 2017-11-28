@@ -19,14 +19,32 @@ module.exports = {
 
 	agregar:function (req,res) {
 		sails.log(req);
-				Alumno.create(req.params.all(), function userCreated(err, user) {
+				Alumno.create(req.params.all(), function userCreated(err, alumno) {
                   if (err) console.log(err);
                   res.redirect('/'); 
                 });
 	},
 
-	modificar:function(req,res){
+	traer:function(req,res){
+		var id = req.param('id');
+		Alumno.find(id,function(err,alumno){
+			if(err) return res.send(err);
+			else {
+				return res.view('cambiar_nota',{alumno:alumno});
+			}
+		}) 
+	},
 
+	modificar:function(req,res){
+		var param = req.params.all();
+		var id = param.id;
+		Alumno.update(id,param,function(err,user){
+			if(err) return res.send(err);
+			else{
+				return res.redirect('lista');
+			}
+
+		});
 	},
 
 

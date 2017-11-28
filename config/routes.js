@@ -46,6 +46,10 @@ module.exports.routes = {
 
 'get /quitar/:id':'AlumnoController.eliminar',
 
+'get /cambiar_nota/:id':'AlumnoController.traer',
+
+'post /Actualizar':'AlumnoController.modificar'
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

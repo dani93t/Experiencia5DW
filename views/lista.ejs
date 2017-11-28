@@ -20,11 +20,11 @@
       </thead>
       <tbody>
         <% _.each(alumnos, function(alumno) { %>
-      <tr>
+      <tr id=<%=alumno.id%>>
         <td><%= alumno.Nombre %></td>
         <td><%= alumno.Apellido %></td>
         <td><%= alumno.Edad %></td>
-        <td><%= alumno.Promedio%> <a class="btn btn-success " title="editar">  <p class="glyphicon glyphicon-edit"></p></a></td>
+        <td><%= alumno.Promedio%> <a class="btn btn-success" href="/cambiar_nota/<%=alumno.id%>" title="editar">  <p class="glyphicon glyphicon-edit"></p></a></td>
         <td>
           <a class="btn btn-danger" href="/quitar/<%=alumno.id%>">Eliminar</a>
         </td>
