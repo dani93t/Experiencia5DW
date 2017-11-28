@@ -6,6 +6,7 @@
                         </div>
                         <div class="panel-body">
                           <form method="POST" action="/actualizar">
+                            <input type="hidden" name="id" value="<%=alumno[0].id%>">
                             <div class="form-grou">
                               <label>Promedio</label>
                               <input class="form-control" type="text" value="<%=alumno[0].Promedio%>" name="Promedio" required="true">
